@@ -12,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     }, {
         sequelize,
         modelName: 'Sets',
+        timestamps: false
     });
     return Set;
 };

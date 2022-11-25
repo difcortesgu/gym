@@ -10,6 +10,7 @@ module.exports = (sequelize, DataTypes) => {
     }, {
         sequelize,
         modelName: 'Executions',
+        timestamps: false
     });
     return Execution;
 };

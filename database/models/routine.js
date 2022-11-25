@@ -12,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     }, {
         sequelize,
         modelName: 'Routines',
+        timestamps: false
     });
     return Routine;
 };
