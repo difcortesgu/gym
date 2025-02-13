@@ -1,12 +1,13 @@
-const userController = require('../controllers/user')
-const auth = require('../middlewares/auth')
+import { getUser, updateUser, deleteUser } from '../controllers/user.js'
+import auth from '../middlewares/auth.js'
+import { Router } from 'express'
 
-const router = require('express').Router()
+const router = Router()
 
 router.use(auth)
 
-router.get('/:id', userController.getUser)
-router.put('/:id', userController.updateUser)
-router.delete('/:id', userController.deleteUser)
+router.get('/:id', getUser)
+router.put('/:id', updateUser)
+router.delete('/:id', deleteUser)
 
-module.exports = router
+export default router

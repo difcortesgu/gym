@@ -1,11 +1,12 @@
-require('dotenv').config();
-const express = require('express')
-const usersRouter = require('./routes/users')
-const authRouter = require('./routes/index')
+import dotenv from 'dotenv'
+import express, { json, urlencoded } from 'express';
+import usersRouter from './routes/users.js';
+import authRouter from './routes/index.js';
 
+dotenv.config()
 const app = express()
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
+app.use(json())
+app.use(urlencoded({ extended: true }))
 
 
 // routers

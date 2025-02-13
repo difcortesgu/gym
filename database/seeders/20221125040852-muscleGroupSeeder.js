@@ -1,19 +1,16 @@
 'use strict';
 
 /** @type {import('sequelize-cli').Migration} */
-module.exports = {
-    async up(queryInterface, Sequelize) {
-        await queryInterface.bulkInsert('MuscleGroups', [
-            { name: 'Pecho' },
-            { name: 'Brazos' },
-            { name: 'Espalda' },
-            { name: 'Piernas' },
-        ]);
-    },
-
-    async down(queryInterface, Sequelize) {
-        await queryInterface.bulkDelete('MuscleGroups', null, {});
-    }
-};
+export async function up(queryInterface, Sequelize) {
+    await queryInterface.bulkInsert('MuscleGroups', [
+        { name: 'Pecho' },
+        { name: 'Brazos' },
+        { name: 'Espalda' },
+        { name: 'Piernas' },
+    ]);
+}
+export async function down(queryInterface, Sequelize) {
+    await queryInterface.bulkDelete('MuscleGroups', null, {});
+}
 
 

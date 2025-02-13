@@ -1,6 +1,6 @@
 'use strict';
-const { Model } = require('sequelize');
-module.exports = (sequelize, DataTypes) => {
+import { Model } from 'sequelize';
+export default (sequelize, DataTypes) => {
     class CardioExercise extends Model {
         static associate(models) {
             CardioExercise.belongsToMany(models.Tools, { through: sequelize.define('Tools_CardioExcersices', {}, { timestamps: false }) });
